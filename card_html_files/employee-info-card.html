@@ -1,0 +1,20 @@
+<polymer-element name="employee-info-card" extends="nebrios-form" target="human_resources.update_employee">
+    <template>
+        <template if="{{kvps.editing.value == true}}">
+            <h2>Update Employee</h2>
+        </template>
+        <template if="{{kvps.editing.value == false}}">
+            <h2>Create Employee</h2>
+        </template>
+        <nebrios-string id="first_name" label="First Name"></nebrios-string>
+        <nebrios-string id="last_name" label="Last Name"></nebrios-string>
+        <nebrios-string id="email" label="Email"></nebrios-string>
+        <nebrios-string id="job_title" label="Job Title"></nebrios-string>
+        <nebrios-select id="department" label="Department" options="departments"></nebrios-select>
+        <nebrios-select id="valid_tasks" label="Valid Tasks" multi="true" options="tasks_list"></nebrios-select>
+        <nebrios-boolean id="is_active" label="Is Active" value="true"></nebrios-boolean>
+    </template>
+    <script>
+        Polymer("employee-info-card", {});
+    </script>
+</polymer-element>
